@@ -2,14 +2,17 @@ package ar.com.system2023.mundopc;
 
 
 public class Monitor {
-    private int contadorMonitor=0;
-    private int idMonitor;
+    private static int contadorMonitor;
+    private final int idMonitor;
     private String marca;
     private String tamaño;
     
+    private Monitor(){
+        this.idMonitor = ++Monitor.contadorMonitor;
+    }
+    
     public Monitor(String marca,String tamaño){
-        contadorMonitor+=1;
-        this.idMonitor=contadorMonitor;
+        this();
         this.marca=marca;
         this.tamaño=tamaño;
     }
@@ -28,6 +31,10 @@ public class Monitor {
 
     public void setTamaño(String tamaño) {
         this.tamaño = tamaño;
+    }
+    
+    public int getIdMonitor(){
+        return this.getIdMonitor();
     }
 
     @Override
